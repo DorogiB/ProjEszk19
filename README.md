@@ -1,3 +1,5 @@
+# TODO: UPDATE README ASAP
+
 # Alkalmazások fejlesztése beadandó feladat
 
 Készítette: Bagoly Kunigunda, Dorogi Benjamin, Fenyvesi Attila
