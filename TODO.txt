@@ -1,4 +1,14 @@
--create additional constructors with non-complete arg list, initialize list type fields!
--throw data around in object?!
--modify functions check modified data, work accordingly!
--in objects work with id's and necessary data!
+Attila:
+	-Refresh memories about front-end systems
+	-Help Kuni to understand the structure and workflow of angular frontends
+Kuni:
+	-Update documentation and README
+	-Prepare to work on the frontend site
+Gábor:
+	-Get to know the structure of backend, prepare to make unit tests
+Fagyi:
+	-Make unit test sample
+	-Collect tasks for upgrading current software
+	-Try to make more sensible commit messages
+	-Remember deadlines
+	-Keep shit together
