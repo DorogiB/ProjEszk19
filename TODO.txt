@@ -25,3 +25,12 @@ Missing/faulty implementations:
  * Tasks in "in progress" state can be deleted.
    (Both backend and frontend error. Tasks marked as "done" might be affected on the backend as well.)
  * On the project members page, even the user's own projects are listed as "participating".
+
+Unit tests:
+source: https://www.mkyong.com/maven/how-to-run-unit-test-with-maven/
+
+# Run all the unit test classes.
+$ mvn test
+
+-In the directory structure there should be a brand different bracket for the tests.
+-One test file ragarding the tests for specific methods is sufficient. 
