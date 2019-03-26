@@ -1,4 +1,4 @@
-Attila:
+﻿Attila:
 	-Refresh memories about front-end systems
 	-Help Kuni to understand the structure and workflow of angular frontends
 Kuni:
@@ -25,6 +25,9 @@ Missing/faulty implementations:
  * Tasks in "in progress" state can be deleted.
    (Both backend and frontend error. Tasks marked as "done" might be affected on the backend as well.)
  * On the project members page, even the user's own projects are listed as "participating".
+
+Overall testing resource :
+https://www.baeldung.com/spring-boot-testing
 
 Unit tests:
 source: https://www.mkyong.com/maven/how-to-run-unit-test-with-maven/
