@@ -17,17 +17,19 @@ Fagyi:
  - Keep shit together
 
 ## Missing/faulty implementations:
- * Project members/contributors can be added, but could not be deleted from a project.
- * The "open/closed project" feature is not yet implemented.
- * The user's personal data section is imperfect/faulty:
-    - "noname" skills can be added (backend error).
-    - password could not be changed.
-    - same skills can be added multiple times (frontend error).
- * Required skills can not be added to the project.
+ - [ ] Project members/contributors can be added, but could not be deleted from a project.
+ - [ ] The "open/closed project" feature is not yet implemented.
+ - [ ] The user's personal data section is imperfect/faulty:
+    - [ ] "noname" skills can be added (backend error).
+    - [ ] password could not be changed.
+    - [x] same skills can be added multiple times (frontend error).
+ - [ ] Required skills can not be added to the project.
    (Frontend interface is done, but not working. May be only a frontend bug.)
- * Tasks in "in progress" state can be deleted.
+ - [ ] Tasks in "in progress" state can be deleted.
    (Both backend and frontend error. Tasks marked as "done" might be affected on the backend as well.)
- * On the project members page, even the user's own projects are listed as "participating".
+ - [ ] On the project members page, even the user's own projects are listed as "participating".
+ - [x] New 'empty' project is added even if the dialog is cancelled (frontend bug).
+ - [ ] Project cannot be deleted.
 
 Overall testing resource :
 https://www.baeldung.com/spring-boot-testing
