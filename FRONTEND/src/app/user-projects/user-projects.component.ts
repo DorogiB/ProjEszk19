@@ -17,8 +17,8 @@ import { UserService } from '../services/user.service';
 })
 export class UserProjectsComponent implements OnInit {
 
-  private projects: Project[];
-  private ownProjects: Project[];
+  public projects: Project[];
+  public ownProjects: Project[];
   public _project: Project;
 
   constructor(
@@ -42,7 +42,7 @@ export class UserProjectsComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogCreateProjectComponent, { width: '350px' });
 
     dialogRef.afterClosed().subscribe(async _name => {
-      if (_name !== undefined) {
+      if (_name !== '' && _name != undefined) {
         const newProject = new Project(_name, this.authService.currentUser.id);
         console.log('NEW PROJECT:', newProject);
         await this.projectService.addNewProject(newProject);

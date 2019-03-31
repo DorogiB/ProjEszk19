@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogCreateProjectComponent implements OnInit {
 
-  private projectName: string;
+  public projectName: string;
 
   constructor(private dialogRef: MatDialogRef<DialogCreateProjectComponent>) { }
 
