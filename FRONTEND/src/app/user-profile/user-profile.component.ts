@@ -2,12 +2,11 @@ import { Skill } from './../classes/skill';
 import { AuthenticationService } from './../services/auth.service';
 import { SkillService } from './../services/skill.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { FormControl, FormBuilder } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { User } from '../classes/user';
 import { UserService } from '../services/user.service';
-import { ActivatedRoute } from '@angular/router';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatAutocomplete, MatChipInputEvent, MatAutocompleteSelectedEvent } from '@angular/material';
 
@@ -21,28 +20,26 @@ import { MatAutocomplete, MatChipInputEvent, MatAutocompleteSelectedEvent } from
 })
 export class UserProfileComponent implements OnInit {
 
-  private currentUser: User;
+  public currentUser: User;
 
-  private allSkills: Skill[] = [];
-  private userSkills: Skill[] = [];
+  public allSkills: Skill[] = [];
 
-  private myControl = new FormControl();
-  private filteredOptions: Observable<string[]>;
-  private separatorKeysCodes: number[] = [ENTER, COMMA];
-  private selectable = true;
-  private removable = true;
-  private addBlurOn = true;
+  public skillControl = new FormControl();
+  public filteredOptions: Observable<string[]>;
+  public separatorKeysCodes: number[] = [ENTER, COMMA];
+  public selectable = true;
+  public removable = true;
+  public addBlurOn = true;
 
   @ViewChild('chipInput') chipInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
   constructor(
-    private route: ActivatedRoute,
     private skillService: SkillService,
     private userService: UserService,
     private authService: AuthenticationService
   ) {
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+    this.filteredOptions = this.skillControl.valueChanges.pipe(
       startWith(null),
       map((src: string | null) => src ? this._filter(src) : this.allSkills.map(skill => skill.name))
     );
@@ -57,55 +54,40 @@ export class UserProfileComponent implements OnInit {
     this.currentUser = new User('', '', '');
     this.currentUser = JSON.parse(JSON.stringify(this.authService.currentUser));
     this.allSkills = await this.skillService.getAllSkills();
-    this.userSkills = await this.userService.getSkillsOfUser(this.currentUser.id);
   }
 
-  private async add(event: MatChipInputEvent) {
-    if (!this.matAutocomplete.isOpen) {
-      const input = event.input;
-      const value = event.value;
-
-      let _skill = this.allSkills.find(item => item.name === value);
-
-      if (_skill === undefined) {
-        _skill = new Skill(value);
-        _skill = await this.skillService.addNewSkill(_skill);
-      }
-
-      await this.userService.addSkill(this.currentUser.id, _skill);
+  public async add(event: KeyboardEvent) {
+    if (event.charCode == 13) {
+      var _skill: Skill = await this.skillService.addNewSkill(new Skill(this.skillControl.value));
+      this.currentUser = await this.userService.addSkill(this.currentUser.id, _skill);
+      this.authService.currentUser = this.currentUser;
       this.allSkills = await this.skillService.getAllSkills();
-      this.userSkills.push(_skill);
-
-      if (input) {
-        input.value = '';
-      }
+      this.skillControl.setValue('');
     }
   }
 
-  private async remove(skill: Skill) {
-    await this.userService.removeSkill(this.currentUser.id, skill);
-    this.userSkills = await this.userService.getSkillsOfUser(this.currentUser.id);
+  public async remove(skill: Skill) {
+    this.currentUser = await this.userService.removeSkill(this.currentUser.id, skill);
+    this.authService.currentUser = this.currentUser;
   }
 
   async selected(event: MatAutocompleteSelectedEvent) {
     const _skill = this.allSkills.find(item => item.name === event.option.viewValue);
 
-    await this.userService.addSkill(this.currentUser.id, _skill);
+    this.currentUser = await this.userService.addSkill(this.currentUser.id, _skill);
     this.allSkills = await this.skillService.getAllSkills();
-    this.userSkills.push(_skill);
 
-    this.chipInput.nativeElement.value = '';
-    // this.fruitCtrl.setValue(null);
+    this.skillControl.setValue('');
   }
 
-  private async saveUserData() {
+  public async saveUserData() {
     this.authService.currentUser = this.currentUser;
     const _user = this.currentUser;
     _user.skills = null;
     await this.userService.editUser(_user);
   }
 
-  private async restoreUserData() {
+  public async restoreUserData() {
     this.currentUser = await this.userService.getUser(this.currentUser.id);
   }
 }

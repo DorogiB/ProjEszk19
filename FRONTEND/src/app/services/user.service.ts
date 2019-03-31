@@ -90,14 +90,14 @@ export class UserService {
     return this.httpService.get<Skill[]>(this.route + userID + '/skills');
   }
 
-  public addSkill(userID: number, skill: Skill): Promise<Skill> {
+  public addSkill(userID: number, skill: Skill): Promise<User> {
     const json = JSON.stringify(skill);
-    return this.httpService.put<Skill>(this.route + userID + '/skills/add', json);
+    return this.httpService.put<User>(this.route + userID + '/skills/add', json);
   }
 
-  public removeSkill(userID: number, skill: Skill): Promise<Skill> {
+  public removeSkill(userID: number, skill: Skill): Promise<User> {
     const json = JSON.stringify(skill);
-    return this.httpService.put<Skill>(this.route + userID + '/skills/remove', json);
+    return this.httpService.put<User>(this.route + userID + '/skills/remove', json);
   }
 
   public getOwnProjects(userID: number): Promise<Project[]> {

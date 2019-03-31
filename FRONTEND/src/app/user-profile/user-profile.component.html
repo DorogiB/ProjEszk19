@@ -37,31 +37,26 @@
       <h2>Képességek:</h2>
 
 
+      <mat-chip-list #chipList>
+        <mat-chip
+          *ngFor="let skill of currentUser.skills"
+          value="skill"
+          [removable]="removable"
+          (removed)="remove(skill)">
+          {{ skill.name }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+
       <mat-form-field>
 
-        <mat-chip-list #chipList>
-          <mat-chip
-            *ngFor="let skill of userSkills"
-            value="skill"
-            [selectable]="selectable"
-            [removable]="removable"
-            (removed)="remove(skill)">
-            {{ skill.name }}
-            <mat-icon matChipRemove>cancel</mat-icon>
-          </mat-chip>
-        </mat-chip-list>
+        <input type="text"
+            placeholder="Na mit tudsz?"
+            matInput [formControl]="skillControl"
+            [matAutocomplete]="auto"
+            (keypress)="add($event)">
 
-        <input
-          placeholder="Na mit tudsz???"
-          #chipInput
-          [formControl]="myControl"
-          [matAutocomplete]="auto"
-          [matChipInputFor]="chipList"
-          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          [matChipInputAddOnBlur]="addOnBlur"
-          (matChipInputTokenEnd)="add($event)">
-
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="selected($event)">
           <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
             {{option}}
           </mat-option>
