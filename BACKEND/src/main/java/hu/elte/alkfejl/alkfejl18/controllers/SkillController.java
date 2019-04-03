@@ -32,10 +32,13 @@ public class SkillController {
 	}
 	
 	@PostMapping("/new")
-	public ResponseEntity<Skill> createSkill(@RequestBody MessageWrapper skill){
+	public ResponseEntity createSkill(@RequestBody MessageWrapper skill){
 		Optional<Skill> oSkill = skillRepository.findByName(skill.getName());
 		if(oSkill.isPresent()){
 			return ResponseEntity.badRequest().build();
+		}
+		if(skill.getName().equals("")) {
+			return ResponseEntity.status(401).body("Skills must have a name");
 		}
 		Skill newSkill = new Skill(null,skill.getName(), new ArrayList<User>(), new ArrayList<Task>());
 		return ResponseEntity.ok(skillRepository.save(newSkill));
