@@ -147,7 +147,7 @@ public class ProjectController {
     	return ResponseEntity.ok(project.getMembers());
     }
     
-    @PostMapping("/{id}/removeMember/{userId}")
+    @PostMapping("/{id}/removeMember")
     public ResponseEntity removeMember(@PathVariable Integer id, @RequestBody MessageWrapper member,Authentication auth){
     	String userName = auth.getName();
     	Optional<Project> oProject = projectRepository.findById(id);
