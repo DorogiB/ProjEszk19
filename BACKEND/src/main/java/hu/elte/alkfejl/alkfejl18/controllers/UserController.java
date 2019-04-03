@@ -1,6 +1,7 @@
 package hu.elte.alkfejl.alkfejl18.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import hu.elte.alkfejl.alkfejl18.entities.*;
 import hu.elte.alkfejl.alkfejl18.repositories.*;
@@ -189,8 +190,9 @@ public class UserController {
          if (!oUser.isPresent()) {
              return ResponseEntity.notFound().build();
          }
-
-         return ResponseEntity.ok(oUser.get().getProjects());
+         List<Project> filteredProjects = oUser.get().getProjects();
+         filteredProjects.removeAll(oUser.get().getOwnedProjects());
+         return ResponseEntity.ok(filteredProjects);
     }
     
     @GetMapping("/{id}/assignedTasks")
