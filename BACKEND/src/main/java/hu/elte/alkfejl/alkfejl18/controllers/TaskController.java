@@ -109,6 +109,9 @@ public class TaskController {
 			if(task.getRequiredBy().size()>0) {
 				return ResponseEntity.badRequest().body("The task can't be deleted since it is the prerequisite of other tasks");
 			}
+			if(task.getStartTime() == null) {
+				return ResponseEntity.badRequest().body("The task can't be deleted since it is already in progress or has been completed");
+			}
 			for(User u : task.getAssignees()) {
 				u.getAssignedTasks().remove(task);
 				userRepository.save(u);
