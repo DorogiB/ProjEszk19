@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import hu.elte.alkfejl.alkfejl18.entities.Skill;
 import hu.elte.alkfejl.alkfejl18.entities.User;
@@ -15,6 +16,7 @@ import hu.elte.alkfejl.alkfejl18.repositories.UserRepository;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@DataJpaTest
 public class RepositoryTest {
 	
 	@Autowired
@@ -27,9 +29,10 @@ public class RepositoryTest {
 	public void whenFindByUserName_thenReturnUser() {
 	    // given
 		String userName = "alex";
+		String passWord = "almafa12";
 	    User user = new User();
 	    user.setUsername(userName);
-	
+	    user.setPassword(passWord);
 	    // when
 	    userRepository.save(user);
 	 	 
