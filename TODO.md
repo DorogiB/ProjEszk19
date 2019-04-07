@@ -7,6 +7,7 @@
 #### Kuni:
  - Update documentation and README
  - Prepare to work on the frontend site
+ - Add travis CI to project
 
 #### Gábor:
  - Get to know the structure of backend, prepare to make unit tests
