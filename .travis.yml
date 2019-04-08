@@ -2,24 +2,24 @@ language: java
 
 sudo: false
 
-before_script: cd ProjEszk19
+before_script: cd testing
 
 
 
 jobs:
 
   include:
+     - stage: test
+
+      script: mvn test
 
     - stage: compile
 
       script: mvn compile
 
-    - stage: test
-
-      script: mvn test
 
 stages:
 
-  - compile
-
   - test
+
+  - compile
