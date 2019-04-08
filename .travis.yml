@@ -11,7 +11,7 @@ jobs:
   include:
      - stage: test
 
-      script: mvn test
+      script: mvn test -B
 
     - stage: compile
 
