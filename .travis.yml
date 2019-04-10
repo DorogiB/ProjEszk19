@@ -5,11 +5,12 @@ sudo: false
 jobs:
 
   include:
-    - stage: test
+    - stage: test_backend
+      script: cd BACKEND
       script: mvn clean test
     - stage: compile
       script: mvn clean compile
 
 stages:
   - compile
-  - test
+  - test_backend
