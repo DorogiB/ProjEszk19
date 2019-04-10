@@ -6,12 +6,8 @@ jobs:
 
   include:
     - stage: test_backend
-      script: cd BACKEND
-      script: mvn clean test
-    - stage: compile_backend
-      script: cd BACKEND
-      script: mvn clean compile
+      script: BACKEND\mvnw clean test
+
 
 stages:
-  - compile_backend
   - test_backend
