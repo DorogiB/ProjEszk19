@@ -8,7 +8,7 @@ jobs:
     - stage: test_backend
       script: 
         - cd BACKEND
-        -mvn test -B
+        - mvn test -B
 
 
 stages:
