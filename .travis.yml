@@ -6,7 +6,9 @@ jobs:
 
   include:
     - stage: test_backend
-      script: BACKEND/mvn clean test
+      script: 
+        - cd BACKEND
+        -mvn test -B
 
 
 stages:
