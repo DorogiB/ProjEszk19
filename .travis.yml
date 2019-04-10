@@ -2,24 +2,18 @@ language: java
 
 sudo: false
 
-before_script: cd testing
-
-
-
 jobs:
 
   include:
      - stage: test
 
-      script: mvn test -B
+      script: mvn clean test
 
     - stage: compile
 
-      script: mvn compile
+      script: mvn clean compile
 
 
 stages:
-
-  - test
-
-  - compile
+  -compile
+  -test
