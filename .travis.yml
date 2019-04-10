@@ -8,9 +8,10 @@ jobs:
     - stage: test_backend
       script: cd BACKEND
       script: mvn clean test
-    - stage: compile
+    - stage: compile_backend
+      script: cd BACKEND
       script: mvn clean compile
 
 stages:
-  - compile
+  - compile_backend
   - test_backend
