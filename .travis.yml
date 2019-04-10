@@ -1,0 +1,25 @@
+language: java
+
+sudo: false
+
+before_script: cd testing
+
+
+
+jobs:
+
+  include:
+     - stage: test
+
+      script: mvn test -B
+
+    - stage: compile
+
+      script: mvn compile
+
+
+stages:
+
+  - test
+
+  - compile
