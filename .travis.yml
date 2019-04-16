@@ -22,7 +22,8 @@ jobs:
       cache:
         directories:
           - ./node_modules
-      install:
+      before_script:
+        - npm install -g @angular/cli
         - npm install -g @compodoc/compodoc
       script:
         - cd FRONTEND
