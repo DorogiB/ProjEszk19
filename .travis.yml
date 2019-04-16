@@ -23,7 +23,7 @@ jobs:
         directories:
           - ./node_modules
       install:
-        - npm install
+        - npm install -g @compodoc/compodoc
       script:
         - cd FRONTEND
         - npm run compodoc
