@@ -8,6 +8,15 @@ export interface RegistrationData {
   email: string;
 }
 
+/**
+ * Component of the registration dialog. The dialog contains a registration form where
+ * the user can add the required information (full name, username and password) for 
+ * the registration process.
+ *
+ * @export
+ * @class DialogRegistrationComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-dialog-registration',
   templateUrl: './dialog-registration.component.html',
@@ -18,10 +27,37 @@ export interface RegistrationData {
 })
 export class DialogRegistrationComponent implements OnInit {
 
-  private name: string;
-  private userName: string;
-  private passwd: string;
-  private passwd2: string;
+  /**
+   * Full name of the new user.
+   *
+   * @type {string}
+   * @memberof DialogRegistrationComponent
+   */
+  public name: string;
+
+  /**
+   * Username of the new user. This is going to be used for authentication during the login process.
+   *
+   * @type {string}
+   * @memberof DialogRegistrationComponent
+   */
+  public userName: string;
+
+  /**
+   * Password of the new user. This is going to be used for authentication during the login process.
+   *
+   * @type {string}
+   * @memberof DialogRegistrationComponent
+   */
+  public passwd: string;
+
+  /**
+   * User password again for verification purposes.
+   *
+   * @type {string}
+   * @memberof DialogRegistrationComponent
+   */
+  public passwd2: string;
 
   constructor(
     private dialogRef: MatDialogRef<DialogRegistrationComponent>,
@@ -33,7 +69,17 @@ export class DialogRegistrationComponent implements OnInit {
     this.name = this.userName = this.passwd = this.passwd2 = '';
   }
 
-  private async validateRegForm() {
+  /**
+   * Registration form validator function. It checks if all data fields are filled
+   * and the 2 passwords match. If any of these criterias are not met it pops up an
+   * error message and returns.
+   * Otherwise it sends the data to the backend and depending on the servers answer
+   * it pops up a verification or error message.
+   *
+   * @returns
+   * @memberof DialogRegistrationComponent
+   */
+  public async validateRegForm() {
 
     if (!this.name.length || !this.userName.length || !this.passwd.length) {
       this.snackBar.open('Minden adatot meg kell adni!', 'HIBA', { duration: 2000 });

@@ -16,6 +16,16 @@ import { UserService } from '../services/user.service';
 import { dateToString } from '../globals';
 import { User } from '../classes/user';
 
+/**
+ * This is the key part of the app. This component is responsible for the 
+ * task management (dependency tree, etc.) in a project.
+ * 
+ * NOTE: This component is still being  implemented.
+ *
+ * @export
+ * @class ProjectTasksComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-project-tasks',
   templateUrl: './project-tasks.component.html',
@@ -26,17 +36,83 @@ import { User } from '../classes/user';
 })
 export class ProjectTasksComponent implements OnInit {
 
-  private dateToString;
+  /**
+   * Reference to a global function.
+   *
+   * @public
+   * @memberof ProjectTasksComponent
+   */
+  public dateToString;
 
+  /**
+   * DagreD3 renderer.
+   *
+   * @private
+   * @memberof ProjectTasksComponent
+   */
   private render;
+
+  /**
+   * Graph component.
+   *
+   * @private
+   * @memberof ProjectTasksComponent
+   */
   private graph;
+
+  /**
+   * The SVG DOM element where DagreD3 can render.
+   *
+   * @private
+   * @memberof ProjectTasksComponent
+   */
   private svg;
 
+  /**
+   * The project which is currently managed by its owner.
+   *
+   * @type {Project}
+   * @memberof ProjectTasksComponent
+   */
   public project: Project;
-  private tasks: Task[];
-  private selectedTask: Task;
-  private users: User[];
 
+  /**
+   * List of all tasks that belong to this project.
+   *
+   * @type {Task[]}
+   * @memberof ProjectTasksComponent
+   */
+  public tasks: Task[];
+
+  /**
+   * This variable holds the selected task which is being edited.
+   *
+   * @type {Task}
+   * @memberof ProjectTasksComponent
+   */
+  public selectedTask: Task;
+
+  /**
+   * 
+   *
+   * @type {User[]}
+   * @memberof ProjectTasksComponent
+   */
+  public users: User[];
+
+  /**
+   * Creates an instance of ProjectTasksComponent.
+   * Sets the reference to a global helper function and initializes the
+   * 'project' variable.
+   * 
+   * @param {ActivatedRoute} route
+   * @param {ProjectService} projectService
+   * @param {TaskService} taskService
+   * @param {UserService} userService
+   * @param {AuthenticationService} authService
+   * @param {MatDialog} dialog
+   * @memberof ProjectTasksComponent
+   */
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
@@ -56,6 +132,13 @@ export class ProjectTasksComponent implements OnInit {
     this.initGraph();
   }
 
+  /**
+   * Initializes the task dependency graph.
+   *
+   * @private
+   * @returns
+   * @memberof ProjectTasksComponent
+   */
   private async initGraph() {
 
     const projectID: number = parseInt(this.route.snapshot.paramMap.get('pid'), 10);
@@ -78,7 +161,7 @@ export class ProjectTasksComponent implements OnInit {
     }
 
     this.tasks.forEach(task => {
-      let fillColor = '#cd5555';
+      let fillColor = '#cd5555';  // Not available (red)
       let textColor = '#ffffff';
 
       task.state = 0;
@@ -134,6 +217,16 @@ export class ProjectTasksComponent implements OnInit {
     this.svg.attr('height', this.graph.graph().height + 40);
   }
 
+  /**
+   * Checks if a task is available for project member to work on.
+   *
+   * @private
+   * @param {Task} task The task which is being checked.
+   * @returns {boolean}
+   *  Returns TRUE if all prerequisites of the given task are completed.
+   *  Otherwise returns FALSE.
+   * @memberof ProjectTasksComponent
+   */
   private checkAvailability(task: Task): boolean {
     let available = true;
     task.prerequisites.forEach(pre => {
@@ -144,7 +237,13 @@ export class ProjectTasksComponent implements OnInit {
     return available;
   }
 
-  private addTask(): void {
+  /**
+   * Adds a task to the project. It opens up a dialog ({DialogAddTaskComponent})
+   * where the project leader can provide the properties of the new task.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public addTask(): void {
     const dialogRef = this.dialog.open(DialogAddTaskComponent, {
       width: '350px',
       data: {
@@ -164,36 +263,63 @@ export class ProjectTasksComponent implements OnInit {
     });
   }
 
-  private async deleteTask() {
+  /**
+   * Deletes the selected task from the project. A task can only be deleted,
+   * if it has not yet been started.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public async deleteTask() {
     await this.taskService.deleteTask(this.selectedTask.id);
     this.selectedTask = null;
     this.initGraph();
   }
 
+  /**
+   * 'onClick' event handler for the nodes of the task dependecy tree.
+   *
+   * @private
+   * @param {string} id Node ID.
+   * @memberof ProjectTasksComponent
+   */
   private nodeClicker(id: string): void {
     const node = this.graph.node(id);
     this.selectedTask = node.task;
-    console.log('SELECTED TASK:', node.task);
   }
 
-  private async beginTask() {
+  /**
+   * "Begins" the selected task. This is an event handler for the "Begin task" button.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public async beginTask() {
     if (this.selectedTask.startTime === null) {
       await this.taskService.beginTask(this.selectedTask.id);
     }
-    console.log(this.authService.currentUser);
 
     // await this.taskService.assignTaskToUser(this.selectedTask.id, this.authService.currentUser);
     this.initGraph();
     this.selectedTask = null;
   }
 
-  private async endTask() {
+  /**
+   * "Ends" the selected task. This is an event handler for the "End task" button.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public async endTask() {
     await this.taskService.endTask(this.selectedTask.id, this.authService.currentUser);
     this.initGraph();
     this.selectedTask = null;
   }
 
-  private isDeletable(): boolean {
+  /**
+   * Determines that the "Delete task" button is visible or not. (The task is deletable or not.)
+   *
+   * @returns {boolean}
+   * @memberof ProjectTasksComponent
+   */
+  public deleteBtnVisibility(): boolean {
     if (this.selectedTask.assignees.length || this.project.leader.id !== this.authService.currentUser.id || this.selectedTask.complete) {
       return false;
     }
@@ -201,7 +327,13 @@ export class ProjectTasksComponent implements OnInit {
     return true;
   }
 
-  private startBtnVisibility(): boolean {
+  /**
+   * Determines that the "Begin task" button is visible or not.
+   *
+   * @returns {boolean}
+   * @memberof ProjectTasksComponent
+   */
+  public startBtnVisibility(): boolean {
     // tslint:disable-next-line:max-line-length
     // if ([1, 2].includes(this.selectedTask.state) && !(this.selectedTask.assignees.map(user => user.id).includes(this.authService.currentUser.id))) {
     if (this.selectedTask.state === 1) {
@@ -211,6 +343,13 @@ export class ProjectTasksComponent implements OnInit {
     return false;
   }
 
+  /**
+   * Being implemented.
+   *
+   * @ignore
+   * @private
+   * @memberof ProjectTasksComponent
+   */
   private async joinTask() {
 
   }

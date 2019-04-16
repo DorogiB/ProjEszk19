@@ -1,13 +1,14 @@
 {
-  "name": "frontend",
-  "version": "0.0.0",
+  "name": "Sajtoslaska",
+  "version": "1.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json -w -s"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "@angular/cli": "~6.2.4",
     "@angular/compiler-cli": "^7.2.8",
     "@angular/language-service": "^6.1.0",
+    "@compodoc/compodoc": "^1.1.9",
     "@types/d3": "^5.0.1",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",

@@ -25,7 +25,7 @@
     <mat-card-header>
       <mat-card-title><span>Feladat:</span> {{selectedTask.name}}</mat-card-title>
       <!-- <mat-icon mat-button class="btn-save" (click)="saveTask()" >save</mat-icon> -->
-      <mat-icon mat-button class="btn-delete" (click)="deleteTask()" *ngIf="isDeletable()" >delete</mat-icon>
+      <mat-icon mat-button class="btn-delete" (click)="deleteTask()" *ngIf="deleteBtnVisibility()" >delete</mat-icon>
     </mat-card-header>
 
     <mat-divider></mat-divider>
