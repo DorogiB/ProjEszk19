@@ -1,15 +1,33 @@
-language: java
-
-sudo: false
-
 jobs:
 
   include:
     - stage: test_backend
+      language: java
+      sudo: false
       script: 
         - cd BACKEND
         - mvn test -B
-
+    
+    - stage: build_frontend
+      name: "Frontend build"
+      language: node_js
+      node_js:
+        - '8.0'
+      addons:
+        apt:
+          sources:
+            - google-chrome
+          packages:
+            - google-chrome-stable
+      cache:
+        directories:
+          - ./node_modules
+      install:
+        - npm install
+      script:
+        - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+      
+      
 
 stages:
-  - test_backend
+  - build_frontend
