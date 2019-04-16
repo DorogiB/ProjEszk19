@@ -10,6 +10,10 @@ import { UserService } from '../services/user.service';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatAutocomplete, MatChipInputEvent, MatAutocompleteSelectedEvent } from '@angular/material';
 
+/**
+ * Ez a komponens kezeli a felhasználók profilát.
+ * (Felhasználók személyes adatai, beleértve a képességeket is.)
+ */
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -66,6 +70,12 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  /**
+   * Removes a skill that is assigned to the current user.
+   *
+   * @param {Skill} skill
+   * @memberof UserProfileComponent
+   */
   public async remove(skill: Skill) {
     this.currentUser = await this.userService.removeSkill(this.currentUser.id, skill);
     this.authService.currentUser = this.currentUser;
@@ -80,6 +90,11 @@ export class UserProfileComponent implements OnInit {
     this.skillControl.setValue('');
   }
 
+  /**
+   * Elmenti (frissíti) a felhasználó megadott adatait.
+   *
+   * @memberof UserProfileComponent
+   */
   public async saveUserData() {
     this.authService.currentUser = this.currentUser;
     const _user = this.currentUser;

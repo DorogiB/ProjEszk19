@@ -5,6 +5,15 @@ import { MatDialog, MatSnackBar } from '@angular/material';
 import { AuthenticationService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
+/**
+ * The component of the login form. It has 2 very simple duty: it sends the 
+ * authentication data (username, password) to the backend, or opens up the
+ * registration dialog if requested.
+ *
+ * @export
+ * @class LoginFormComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -28,6 +37,15 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() { }
 
+  /**
+   * The event handler of the login form's submit event. It takes the username and
+   * password from the input fields and send them to the backend through the 
+   * 'authService' service. If the login process is successful it sets the 
+   * routing module's path to the user's project page. Otherwise it pops up an
+   * error message.
+   *
+   * @memberof LoginFormComponent
+   */
   async onSubmit() {
     // console.log(await this.authService.login('', ''));
     // this.router.navigate([`/users/${this.authService.currentUser.id}/projects`]);
@@ -46,7 +64,12 @@ export class LoginFormComponent implements OnInit {
     // }
   }
 
-  private openRegDialog(): void {
+  /**
+   * Opens up the registration dialog if the 'Registration' button is clicked.
+   *
+   * @memberof LoginFormComponent
+   */
+  public openRegDialog(): void {
     const dialogRef = this.dialog.open(DialogRegistrationComponent, {
       width: '350px'
     });
