@@ -13,10 +13,8 @@ jobs:
       language: node_js
       node_js:
         - '8.0'
-      before_script:
+      install:
         - npm install
-        - npm install -g @angular/cli
-        - npm install -g @compodoc/compodoc
       script:
         - cd FRONTEND
         - npm run compodoc
