@@ -25,6 +25,7 @@ jobs:
       install:
         - npm install
       script:
+        - cd FRONTEND
         - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
       
       
