@@ -16,6 +16,7 @@ jobs:
       install:
         - cd FRONTEND
         - npm install
+        - npm audit fix --force
       script:
         - npm run compodoc
       
