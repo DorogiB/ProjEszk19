@@ -37,3 +37,4 @@ jobs:
 
 stages:
   - build_frontend
+  - generate_frontend_docs
