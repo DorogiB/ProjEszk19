@@ -2,14 +2,15 @@ jobs:
 
   include:
     - stage: test_backend
+      name: "Testing backend"
       language: java
       sudo: false
       script: 
         - cd BACKEND
         - mvn test -B
     
-    - stage: build_frontend
-      name: "Frontend build"
+    - stage: generate_frontend_docs
+      name: "Generating documents with Compodoc"
       language: node_js
       node_js:
         - '11.12.0'
@@ -19,6 +20,18 @@ jobs:
         - npm audit fix --force
       script:
         - npm run compodoc
+      
+      - stage: build_frontend
+      name: "Building Angular"
+      language: node_js
+      node_js:
+        - '11.12.0'
+      install:
+        - cd FRONTEND
+        - npm install
+        - npm audit fix --force
+      script:
+        - npm run build
       
       
 
