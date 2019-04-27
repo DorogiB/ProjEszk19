@@ -1,3 +1,9 @@
+addons:
+  sonarcloud:
+    organization: "DorogiB-github"
+    token:
+      secure: "$SONAR_TOKEN"
+
 jobs:
 
   include:
@@ -32,9 +38,14 @@ jobs:
         - npm audit fix --force
       script:
         - npm run build
+        
+     - stage: sonar
+       script: mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
+       
       
       
 
 stages:
   - build_frontend
   - generate_frontend_docs
+  - sonar
