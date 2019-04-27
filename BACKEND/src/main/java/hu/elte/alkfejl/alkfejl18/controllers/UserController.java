@@ -204,5 +204,15 @@ public class UserController {
     }
     
     
+    public void setUserRepository(UserRepository userRepository) {
+    	this.userRepository = userRepository;
+    }
     
+    public void setPasswordEncoder(BCryptPasswordEncoder passwordEncoder) {
+    	this.passwordEncoder = passwordEncoder;
+    }
+    
+    public void setSkillRepository(SkillRepository skillRepository) {
+    	this.skillRepository = skillRepository;
+    }
 }
