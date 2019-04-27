@@ -1,25 +1,40 @@
-language: java
-
-sudo: false
-
-before_script: cd testing
-
-
-
 jobs:
 
   include:
-     - stage: test
-
-      script: mvn test -B
-
-    - stage: compile
-
-      script: mvn compile
-
+    - stage: test_backend
+      name: "Testing backend"
+      language: java
+      sudo: false
+      script: 
+        - cd BACKEND
+        - mvn test -B
+    
+    - stage: generate_frontend_docs
+      name: "Generating documents with Compodoc"
+      language: node_js
+      node_js:
+        - '11.12.0'
+      install:
+        - cd FRONTEND
+        - npm install
+        - npm audit fix --force
+      script:
+        - npm run compodoc
+      
+    - stage: build_frontend
+      name: "Building Angular"
+      language: node_js
+      node_js:
+        - '11.12.0'
+      install:
+        - cd FRONTEND
+        - npm install
+        - npm audit fix --force
+      script:
+        - npm run build
+      
+      
 
 stages:
-
-  - test
-
-  - compile
+  - build_frontend
+  - generate_frontend_docs

@@ -1,4 +1,4 @@
-import { Observable, of } from 'rxjs';
+
 import { Injectable } from '@angular/core';
 import { User } from '../classes/user';
 import { HttpService } from './http.service';
@@ -12,57 +12,8 @@ import { Task } from '../classes/task';
 export class UserService {
 
   private route = 'users/';
-  private USERS: User[];
 
-  constructor(private httpService: HttpService) {
-    // this.USERS = [
-    //   {
-    //     id: 1,
-    //     userName: 'johnny',
-    //     name: 'John Doe',
-    //     ownedProjects: [100],
-    //     projects: [101],
-    //     skills: [12, 13],
-    //     assignedTasks: []
-    //   } as User,
-    //   {
-    //     id: 2,
-    //     userName: 'jane',
-    //     name: 'Jane Doe',
-    //     ownedProjects: [101],
-    //     projects: [100],
-    //     skills: [11, 12],
-    //     assignedTasks: []
-    //   } as User,
-    //   {
-    //     id: 3,
-    //     userName: 'doki',
-    //     name: 'Dr. Strange',
-    //     ownedProjects: [],
-    //     projects: [],
-    //     skills: [11, 13],
-    //     assignedTasks: []
-    //   } as User,
-    //   {
-    //     id: 4,
-    //     userName: 'ironman',
-    //     name: 'Tony Stark',
-    //     ownedProjects: [],
-    //     projects: [],
-    //     skills: [11, 12, 13],
-    //     assignedTasks: []
-    //   } as User,
-    //   {
-    //     id: 5,
-    //     userName: 'thunder',
-    //     name: 'Thor',
-    //     ownedProjects: [],
-    //     projects: [],
-    //     skills: [11, 12, 13],
-    //     assignedTasks: []
-    //   } as User
-    // ];
-  }
+  constructor(private httpService: HttpService) { }
 
   public registerUser(user: User): Promise<User> {
     const json = JSON.stringify(user);

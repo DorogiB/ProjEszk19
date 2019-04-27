@@ -1,20 +1,35 @@
-import { TaskService } from './task.service';
 
 import { Injectable } from '@angular/core';
 import { Project } from './../classes/projects';
-import { Observable, of } from 'rxjs';
-import { Task } from '../classes/task';
 import { HttpService } from './http.service';
 import { User } from '../classes/user';
 
+/**
+ * This service provides an easy-to-use access to the backend's '/project/*' endpoints.
+ *
+ * @export
+ * @class ProjectService
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
 
+  /**
+   * 
+   *
+   * @private
+   * @memberof ProjectService
+   */
   private route = 'projects/';
-  private PROJECTS: Project[];
 
+  /**
+   * Creates an instance of ProjectService.
+   * 
+   * @ignore
+   * @param {HttpService} httpService
+   * @memberof ProjectService
+   */
   constructor(private httpService: HttpService) { }
 
   public getAllProjects(): Promise<Project[]> {
