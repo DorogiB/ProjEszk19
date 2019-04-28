@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# GIT_DEPLOY_REPO=${GIT_DEPLOY_REPO:-$(node -p -e "require('./package.json').repository.url")}
+GIT_DEPLOY_REPO=${GIT_DEPLOY_REPO:-$(node -p -e "require('./package.json').repository.url")}
 
 cd documentation && \
 
@@ -16,4 +16,4 @@ git commit -m "Deploy to GitHub Pages" && \
 echo ${GITHUB_TOKEN} && \
 echo ${GITHUB_REF} && \
 
-git push --force "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:gh-pages > /dev/null 2>&1
+git push --force "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:gh-pages
