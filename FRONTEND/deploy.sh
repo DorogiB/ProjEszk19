@@ -14,6 +14,6 @@ git add . && \
 git commit -m "Deploy to GitHub Pages" && \
 
 echo ${GITHUB_TOKEN} && \
-echo ${GITHUB_REF}
+echo ${GITHUB_REF} && \
 
-#git push --force "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:gh-pages > /dev/null 2>&1
+git push --force "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:gh-pages > /dev/null 2>&1
