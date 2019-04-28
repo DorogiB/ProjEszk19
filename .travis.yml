@@ -7,37 +7,37 @@ addons:
 jobs:
 
   include:
-    - stage: test_backend
-      name: "Testing backend"
-      language: java
-      sudo: false
-      script: 
-        - cd BACKEND
-        - mvn test -B
+#    - stage: test_backend
+#      name: "Testing backend"
+#      language: java
+#      sudo: false
+#      script: 
+#        - cd BACKEND
+#        - mvn test -B
     
-    - stage: generate_frontend_docs
-      name: "Generating documents with Compodoc"
-      language: node_js
-      node_js:
-        - '11.12.0'
-      install:
-        - cd FRONTEND
-        - npm install
-        - npm audit fix --force
-      script:
-        - npm run compodoc
+#    - stage: generate_frontend_docs
+#      name: "Generating documents with Compodoc"
+#      language: node_js
+#      node_js:
+#        - '11.12.0'
+#      install:
+#        - cd FRONTEND
+#        - npm install
+#        - npm audit fix --force
+#      script:
+#        - npm run compodoc
       
-    - stage: build_frontend
-      name: "Building Angular"
-      language: node_js
-      node_js:
-        - '11.12.0'
-      install:
-        - cd FRONTEND
-        - npm install
-        - npm audit fix --force
-      script:
-        - npm run build
+#    - stage: build_frontend
+#      name: "Building Angular"
+#      language: node_js
+#      node_js:
+#        - '11.12.0'
+#      install:
+#        - cd FRONTEND
+#        - npm install
+#        - npm audit fix --force
+#      script:
+#        - npm run build
         
     - stage: sonarcloud
       name: "Running SonarCloud"
@@ -45,11 +45,11 @@ jobs:
       sudo: false
       script: 
         - cd BACKEND
-        - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
+        - mvn clean package sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
     
       
 
 stages:
-  - build_frontend
-  - generate_frontend_docs
+#  - build_frontend
+#  - generate_frontend_docs
   - sonarcloud
