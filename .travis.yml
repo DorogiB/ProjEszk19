@@ -1,9 +1,3 @@
-#addons:
-#  sonarcloud:
-#    organization: "dorogib-github"
-#    token:
-#      secure: "$SONAR_TOKEN"
-
 jobs:
 
   include:
