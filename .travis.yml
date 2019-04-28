@@ -39,13 +39,13 @@ jobs:
       script:
         - npm run build
         
-      - stage: sonarcloud
-        name: "Running SonarCloud"
-        language: java
-        sudo: false
-        script: 
-          - cd BACKEND
-          - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
+    - stage: sonarcloud
+      name: "Running SonarCloud"
+      language: java
+      sudo: false
+      script: 
+        - cd BACKEND
+        - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
     
       
 
