@@ -1,6 +1,6 @@
 addons:
   sonarcloud:
-    organization: "DorogiB-github"
+    organization: "dorogib-github"
     token:
       secure: "$SONAR_TOKEN"
 
