@@ -45,7 +45,7 @@ jobs:
       sudo: false
       script: 
         - cd BACKEND
-        - mvn clean package sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
+        - mvn sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
     
       
 
