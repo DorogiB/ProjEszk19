@@ -1,43 +1,43 @@
-addons:
-  sonarcloud:
-    organization: "dorogib-github"
-    token:
-      secure: "$SONAR_TOKEN"
+#addons:
+#  sonarcloud:
+#    organization: "dorogib-github"
+#    token:
+#      secure: "$SONAR_TOKEN"
 
 jobs:
 
   include:
-#    - stage: test_backend
-#      name: "Testing backend"
-#      language: java
-#      sudo: false
-#      script: 
-#        - cd BACKEND
-#        - mvn test -B
+    - stage: test_backend
+      name: "Testing backend"
+      language: java
+      sudo: false
+      script: 
+        - cd BACKEND
+        - mvn test -B
     
-#    - stage: generate_frontend_docs
-#      name: "Generating documents with Compodoc"
-#      language: node_js
-#      node_js:
-#        - '11.12.0'
-#      install:
-#        - cd FRONTEND
-#        - npm install
-#        - npm audit fix --force
-#      script:
-#        - npm run compodoc
+    - stage: generate_frontend_docs
+      name: "Generating documents with Compodoc"
+      language: node_js
+      node_js:
+        - '11.12.0'
+      install:
+        - cd FRONTEND
+        - npm install
+        - npm audit fix --force
+      script:
+        - npm run compodoc
       
-#    - stage: build_frontend
-#      name: "Building Angular"
-#      language: node_js
-#      node_js:
-#        - '11.12.0'
-#      install:
-#        - cd FRONTEND
-#        - npm install
-#        - npm audit fix --force
-#      script:
-#        - npm run build
+    - stage: build_frontend
+      name: "Building Angular"
+      language: node_js
+      node_js:
+        - '11.12.0'
+      install:
+        - cd FRONTEND
+        - npm install
+        - npm audit fix --force
+      script:
+        - npm run build
         
     - stage: sonarcloud
       name: "Running SonarCloud"
@@ -50,6 +50,7 @@ jobs:
       
 
 stages:
-#  - build_frontend
-#  - generate_frontend_docs
+  - test_backend
+  - build_frontend
+  - generate_frontend_docs
   - sonarcloud
