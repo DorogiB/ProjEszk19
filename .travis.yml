@@ -1,25 +1,25 @@
 jobs:
 
   include:
-    - stage: test_backend
-      name: "Testing backend"
-      language: java
-      sudo: false
-      script: 
-        - cd BACKEND
-        - mvn test -B
-      
-    - stage: build_frontend
-      name: "Building Angular"
-      language: node_js
-      node_js:
-        - '11.12.0'
-      install:
-        - cd FRONTEND
-        - npm install
-        - npm audit fix --force
-      script:
-        - npm run build
+#    - stage: test_backend
+#      name: "Testing backend"
+#      language: java
+#      sudo: false
+#      script: 
+#        - cd BACKEND
+#        - mvn test -B
+#      
+#    - stage: build_frontend
+#      name: "Building Angular"
+#      language: node_js
+#      node_js:
+#        - '11.12.0'
+#      install:
+#        - cd FRONTEND
+#        - npm install
+#        - npm audit fix --force
+#      script:
+#        - npm run build
      
     - stage: generate_frontend_docs
       name: "Generating documents with Compodoc"
@@ -32,19 +32,22 @@ jobs:
         - npm audit fix --force
       script:
         - npm run compodoc
+        - bash ./deploy.sh
        
-    - stage: sonarcloud
-      name: "Running SonarCloud"
-      language: java
-      sudo: false
-      script: 
-        - cd BACKEND
-        - mvn clean package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
+#    - stage: sonarcloud
+#      name: "Running SonarCloud"
+#      language: java
+#      sudo: false
+#      script: 
+#        - cd BACKEND
+#        - mvn clean package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
     
-      
+env:
+  global:
+    - GITHUB_REF: https://github.com/DorogiB/ProjEszk19.git
 
 stages:
-  - test_backend
-  - build_frontend
+#  - test_backend
+#  - build_frontend
   - generate_frontend_docs
-  - sonarcloud
+#  - sonarcloud
