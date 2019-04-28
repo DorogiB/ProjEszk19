@@ -44,7 +44,7 @@ jobs:
     
 env:
   global:
-    - GITHUB_REF: https://github.com/DorogiB/ProjEszk19.git
+    - GITHUB_REF: github.com/DorogiB/ProjEszk19.git
 
 stages:
 #  - test_backend
