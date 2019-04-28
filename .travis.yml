@@ -8,18 +8,6 @@ jobs:
       script: 
         - cd BACKEND
         - mvn test -B
-    
-    - stage: generate_frontend_docs
-      name: "Generating documents with Compodoc"
-      language: node_js
-      node_js:
-        - '11.12.0'
-      install:
-        - cd FRONTEND
-        - npm install
-        - npm audit fix --force
-      script:
-        - npm run compodoc
       
     - stage: build_frontend
       name: "Building Angular"
@@ -32,7 +20,19 @@ jobs:
         - npm audit fix --force
       script:
         - npm run build
-        
+     
+    - stage: generate_frontend_docs
+      name: "Generating documents with Compodoc"
+      language: node_js
+      node_js:
+        - '11.12.0'
+      install:
+        - cd FRONTEND
+        - npm install
+        - npm audit fix --force
+      script:
+        - npm run compodoc
+       
     - stage: sonarcloud
       name: "Running SonarCloud"
       language: java
