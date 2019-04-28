@@ -40,6 +40,7 @@ jobs:
         - npm run build
         
      - stage: sonar
+       language: java
        script: mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify sonar:sonar -DskipTests=true -Dmaven.test.failure.ignore=true
        
       
