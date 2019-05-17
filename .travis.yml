@@ -7,7 +7,7 @@ jobs:
       sudo: false
       script: 
         - cd BACKEND
-        - mvn test -B
+        - mvn test
       
     - stage: build_frontend
       name: "Building Angular"
