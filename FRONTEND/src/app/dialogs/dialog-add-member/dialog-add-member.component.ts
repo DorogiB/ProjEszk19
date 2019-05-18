@@ -23,6 +23,15 @@ import { UserService } from './../../services/user.service';
 export class DialogAddMemberComponent implements OnInit {
 
   /**
+   * Stores the selected user which will be added to the project.
+   *
+   * @public
+   * @type {User}
+   * @memberof DialogAddMemberComponent
+   */
+  public selectedUser: User;
+
+  /**
    * List of users that are already assigned to the project.
    *
    * @private
@@ -34,11 +43,11 @@ export class DialogAddMemberComponent implements OnInit {
   /**
    * List of all other (not assigned) users.
    *
-   * @private
+   * @public
    * @type {User[]}
    * @memberof DialogAddMemberComponent
    */
-  private users: User[];
+  public users: User[];
 
   /**
    * Creates an instance of DialogAddMemberComponent.

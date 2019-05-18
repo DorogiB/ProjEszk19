@@ -38,7 +38,7 @@ export class UserProjectsComponent implements OnInit {
     this.projects = this.projects.filter(project => !(this.ownProjects.map(p => p.id).includes(project.id)));
   }
 
-  private createProject(): void {
+  public createProject(): void {
     const dialogRef = this.dialog.open(DialogCreateProjectComponent, { width: '350px' });
 
     dialogRef.afterClosed().subscribe(async _name => {

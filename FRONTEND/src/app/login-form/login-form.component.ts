@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
 
-  private loginForm: FormGroup;
+  public loginForm: FormGroup;
 
   constructor(
     public dialog: MatDialog,

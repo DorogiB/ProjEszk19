@@ -11,8 +11,8 @@
     "compodoc": "./node_modules/.bin/compodoc -p ./tsconfig.json"
   },
   "repository": {
-	"type": "git",
-	"url": "https://github.com/DorogiB/ProjEszk19.git"
+    "type": "git",
+    "url": "https://github.com/DorogiB/ProjEszk19.git"
   },
   "private": true,
   "dependencies": {
