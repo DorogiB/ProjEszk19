@@ -1,4 +1,4 @@
-#The Project Mapper
+# The Project Mapper
 
 A "The Project Mapper" egy webes alkalmazás, mely segít nyomon követni projektjeink, feladataink haladását. Kiváló alkalmazás munkacsoportok, céges csapatok, baráti társaságok számára, segít nyomon követni a részfeladatok haladását, átláthatóvá teszi a szervezési folyamatokat. Egy letisztult, egyszerű projekt menedzselő alkalmazás. 
 
