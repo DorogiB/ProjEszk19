@@ -4,7 +4,7 @@ GIT_DEPLOY_REPO=${GIT_DEPLOY_REPO:-$(node -p -e "require('./package.json').repos
 
 cd documentation && \
 
-cp module-backend/target/module-backend*.war deployment/
+cp module-backend/target/module-backend*.war deployment/ && \
 
 git config user.name "DorogiB" && \
 git config user.email "dbenjamin@inf.elte.hu" && \
