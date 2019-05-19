@@ -10,4 +10,4 @@ git config user.email "dbenjamin@inf.elte.hu" && \
 git add . && \
 git commit -m "Deploying application" && \
 
-git push --force "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
+git push --force "https://${GITHUB_TOKEN}@${GITHUB_REF}" master
