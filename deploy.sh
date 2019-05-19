@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cp module-backend/target/module-backend*.war deployment/ && \
+# cp module-backend/target/module-backend*.war deployment/ && \
 
 # git config user.name "DorogiB" && \
 # git config user.email "dbenjamin@inf.elte.hu" && \
