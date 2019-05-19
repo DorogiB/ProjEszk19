@@ -1,25 +1,25 @@
 jobs:
 
   include:
-    - stage: test_backend
-      name: "Testing backend"
-      language: java
-      sudo: false
-      script: 
-        - cd module-backend
-        - mvn test
+    # - stage: test_backend
+    #   name: "Testing backend"
+    #   language: java
+    #   sudo: false
+    #   script: 
+    #     - cd module-backend
+    #     - mvn test
       
-    - stage: build_frontend
-      name: "Building Angular"
-      language: node_js
-      node_js:
-        - '10.15.3'
-      install:
-        - cd module-frontend
-        - npm install
-#        - npm audit fix --force
-      script:
-        - npm run build
+#     - stage: build_frontend
+#       name: "Building Angular"
+#       language: node_js
+#       node_js:
+#         - '10.15.3'
+#       install:
+#         - cd module-frontend
+#         - npm install
+# #        - npm audit fix --force
+#       script:
+#         - npm run build
      
     - stage: generate_frontend_docs
       name: "Generating documents with Compodoc"
@@ -29,7 +29,7 @@ jobs:
       install:
         - cd module-frontend
         - npm install
-        - npm audit fix --force
+#        - npm audit fix --force
       script:
         - npm run compodoc
         - bash ./deploy.sh
@@ -47,7 +47,7 @@ env:
     - GITHUB_REF: github.com/DorogiB/ProjEszk19.git
 
 stages:
-  - test_backend
-  - build_frontend
+  # - test_backend
+  # - build_frontend
   - generate_frontend_docs
   - sonarcloud
