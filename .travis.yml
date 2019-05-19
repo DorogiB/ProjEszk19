@@ -45,7 +45,7 @@ jobs:
     - stage: deploy
       name: "Deploying"
       language: java
-      sudo: false
+      sudo: true
       script: 
         - mvn package
         - ./deploy.sh
