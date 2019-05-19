@@ -47,7 +47,7 @@ jobs:
       language: java
       sudo: false
       script: 
-        - mvn clean install
+        - mvn package
    
 env:
   global:
