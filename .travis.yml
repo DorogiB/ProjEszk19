@@ -13,11 +13,11 @@ jobs:
       name: "Building Angular"
       language: node_js
       node_js:
-        - '11.12.0'
+        - '10.15.3'
       install:
         - cd module-frontend
         - npm install
-        - npm audit fix --force
+#        - npm audit fix --force
       script:
         - npm run build
      
