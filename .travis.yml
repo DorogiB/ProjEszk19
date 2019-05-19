@@ -46,6 +46,8 @@ jobs:
       name: "Deploying"
       language: java
       sudo: true
+      before_install:
+        - chmod +x deploy.sh
       script: 
         - mvn package
         - ./deploy.sh
