@@ -12,5 +12,5 @@ git commit --message "Deploying application" && \
 git tag v$GIT_TAG_VERSION -a -m "Tagging version v$GIT_TAG_VERSION" && \
 
 # git push --quiet --set-upstream "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
-git push origin $TRAVIS_BRANCH
-git push origin $TRAVIS_BRANCH --tags
+git push "https://${GITHUB_TOKEN}@${GITHUB_REF}" $TRAVIS_BRANCH
+git push "https://${GITHUB_TOKEN}@${GITHUB_REF}" $TRAVIS_BRANCH --tags
