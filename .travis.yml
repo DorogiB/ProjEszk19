@@ -18,6 +18,8 @@ jobs:
   include:
     - stage: deploy
       name: "Deploying application"
+      language: java
+      sudo: false
       before_deploy:
         - mvn package
       deploy:
