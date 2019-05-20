@@ -7,12 +7,10 @@ jobs:
       name: "Deploying application"
       language: java
       sudo: false
+      if: tag == ""
       before_script:
         - mvn package
       script:
-        - on:
-            branch: master
-            condition: -z $(git tag --points-at $TRAVIS_COMMIT)
         # provider: script
         # script:
         - bash ./deploy.sh
