@@ -3,34 +3,34 @@ jobs:
 
   include:
 
-    - stage: test
-      name: "Testing backend"
-      language: java
-      sudo: false
-      before_script:
-        - cd module-backend
-      script: 
-        - mvn test
+    # - stage: test
+    #   name: "Testing backend"
+    #   language: java
+    #   sudo: false
+    #   before_script:
+    #     - cd module-backend
+    #   script: 
+    #     - mvn test
 
-    - stage: generate_docs
-      name: "Generating documents with Compodoc"
-      language: node_js
-      node_js:
-        - '10.15.3'
-      install:
-        - cd module-frontend/src
-        - npm install
-      script:
-        - npm run compodoc
-        - bash ./deploy.sh
+    # - stage: documentation
+    #   name: "Generating documents with Compodoc"
+    #   language: node_js
+    #   node_js:
+    #     - '10.15.3'
+    #   install:
+    #     - cd module-frontend/src
+    #     - npm install
+    #   script:
+    #     - npm run compodoc
+    #     - bash ./deploy.sh
        
-    - stage: sonarcloud
-      name: "Running SonarCloud"
-      language: java
-      sudo: false
-      script: 
-        - cd module-backend
-        - mvn package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
+    # - stage: sonarcloud
+    #   name: "Running SonarCloud"
+    #   language: java
+    #   sudo: false
+    #   script: 
+    #     - cd module-backend
+    #     - mvn package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
 
     - stage: deploy
       name: "Deploying application"
@@ -40,13 +40,19 @@ jobs:
         - mvn package
       script:
         - bash ./deploy.sh
+      deploy:
+        provider: releases
+        api_key: ${GITHUB_TOKEN}
+        file_glob: true
+        file: module-backend/target/module-backend*.war
+        skip_cleanup: true
    
 env:
   global:
     - GITHUB_REF: github.com/DorogiB/ProjEszk19.git
 
 stages:
-  - test
-  - generate_docs
-  - sonarcloud
+  # - test
+  # - generate_docs
+  # - sonarcloud
   - deploy
