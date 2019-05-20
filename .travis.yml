@@ -1,4 +1,5 @@
 
+
 jobs:
 
   include:
@@ -7,7 +8,6 @@ jobs:
       name: "Deploying application"
       language: java
       sudo: false
-      if: tag == ""
       before_script:
         - mvn package
       script:
