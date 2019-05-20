@@ -1,17 +1,32 @@
-language: java
-sudo: false
+# language: java
+# sudo: false
 
-before_deploy:
-  - mvn package
+# before_deploy:
+#   - mvn package
 
-deploy:
-  - on:
-      branch: master
-      condition: -z $(git tag --points-at $TRAVIS_COMMIT)
-    provider: script
-    script:
-      - bash ./deploy.sh
+# deploy:
+#   - on:
+#       branch: master
+#       condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+#     provider: script
+#     script:
+#       - bash ./deploy.sh
 
+
+
+jobs:
+  include:
+    - stage: deploy
+      name: "Deploying application"
+      before_deploy:
+        - mvn package
+      deploy:
+        - on:
+            branch: master
+            condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+        provider: script
+        script:
+          - bash ./deploy.sh
 
 # matrix:
 
