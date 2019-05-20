@@ -1,0 +1,1928 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mapper documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">mapper documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ProjectTasksComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/project-tasks/project-tasks.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>This is the key part of the app. This component is responsible for the 
+task management (dependency tree, etc.) in a project.</p>
+<p>NOTE: This component is still being  implemented.</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+    <p class="comment">
+        <h3>Example</h3>
+    </p>
+    <div class="io-description">
+    </div>
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-project-tasks</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>../common-styles.scss,<br>./project-tasks.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./project-tasks.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dateToString">dateToString</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#graph">graph</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#project">project</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#render">render</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedTask">selectedTask</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#svg">svg</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#tasks">tasks</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#users">users</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#addTask">addTask</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#beginTask">beginTask</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkAvailability">checkAvailability</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#deleteBtnVisibility">deleteBtnVisibility</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteTask">deleteTask</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#endTask">endTask</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#initGraph">initGraph</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#nodeClicker">nodeClicker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#startBtnVisibility">startBtnVisibility</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, projectService: <a href="../injectables/ProjectService.html">ProjectService</a>, taskService: <a href="../injectables/TaskService.html">TaskService</a>, userService: <a href="../injectables/UserService.html">UserService</a>, authService: <a href="../injectables/AuthenticationService.html">AuthenticationService</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:101</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of ProjectTasksComponent.
+Sets the reference to a global helper function and initializes the
+&#39;project&#39; variable.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>projectService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ProjectService.html" target="_self" >ProjectService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>taskService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TaskService.html" target="_self" >TaskService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthenticationService.html" target="_self" >AuthenticationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addTask"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            addTask
+                        </b>
+                        <a href="#addTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addTask()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="246"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:246</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Adds a task to the project. It opens up a dialog ({DialogAddTaskComponent})
+where the project leader can provide the properties of the new task.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="beginTask"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                            beginTask
+                        </b>
+                        <a href="#beginTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>beginTask()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="295"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:295</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>&quot;Begins&quot; the selected task. This is an event handler for the &quot;Begin task&quot; button.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkAvailability"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            checkAvailability
+                        </b>
+                        <a href="#checkAvailability"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkAvailability(task: <a href="../classes/Task.html">Task</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="230"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:230</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Checks if a task is available for project member to work on.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>task</td>
+                                    <td>
+                                                <code><a href="../classes/Task.html" target="_self" >Task</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The task which is being checked.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Returns TRUE if all prerequisites of the given task are completed.
+Otherwise returns FALSE.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteBtnVisibility"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            deleteBtnVisibility
+                        </b>
+                        <a href="#deleteBtnVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteBtnVisibility()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="322"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:322</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Determines that the &quot;Delete task&quot; button is visible or not. (The task is deletable or not.)</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteTask"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                            deleteTask
+                        </b>
+                        <a href="#deleteTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteTask()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="272"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:272</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Deletes the selected task from the project. A task can only be deleted,
+if it has not yet been started.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endTask"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                            endTask
+                        </b>
+                        <a href="#endTask"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>endTask()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="310"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:310</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>&quot;Ends&quot; the selected task. This is an event handler for the &quot;End task&quot; button.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initGraph"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                            initGraph
+                        </b>
+                        <a href="#initGraph"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initGraph()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Initializes the task dependency graph.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="128"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:128</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeClicker"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            nodeClicker
+                        </b>
+                        <a href="#nodeClicker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>nodeClicker(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="285"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:285</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>&#39;onClick&#39; event handler for the nodes of the task dependecy tree.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Node ID.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startBtnVisibility"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            startBtnVisibility
+                        </b>
+                        <a href="#startBtnVisibility"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>startBtnVisibility()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="336"
+                            class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:336</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Determines that the &quot;Begin task&quot; button is visible or not.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dateToString"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dateToString</b>
+                            <a href="#dateToString"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Reference to a global function.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="graph"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            graph</b>
+                            <a href="#graph"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Graph component.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="project"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            project</b>
+                            <a href="#project"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Project.html" target="_self" >Project</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:77</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The project which is currently managed by its owner.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="render"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            render</b>
+                            <a href="#render"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>DagreD3 renderer.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedTask"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectedTask</b>
+                            <a href="#selectedTask"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Task.html" target="_self" >Task</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>This variable holds the selected task which is being edited.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="svg"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            svg</b>
+                            <a href="#svg"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>The SVG DOM element where DagreD3 can render.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tasks"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            tasks</b>
+                            <a href="#tasks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Task.html" target="_self" >Task[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:85</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>List of all tasks that belong to this project.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="users"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            users</b>
+                            <a href="#users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/project-tasks/project-tasks.component.ts:101</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Skill } from &#x27;./../classes/skill&#x27;;
+import { AuthenticationService } from &#x27;./../services/auth.service&#x27;;
+// import { User } from &#x27;src/app/classes/user&#x27;;
+import { DialogAddTaskComponent } from &#x27;./../dialogs/dialog-add-task/dialog-add-task.component&#x27;;
+import { MatDialog } from &#x27;@angular/material&#x27;;
+import { Task } from &#x27;./../classes/task&#x27;;
+import { TaskService } from &#x27;./../services/task.service&#x27;;
+import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Project } from &#x27;../classes/projects&#x27;;
+import { ProjectService } from &#x27;../services/project.service&#x27;;
+import * as d3 from &#x27;d3&#x27;;
+import * as dagreD3 from &#x27;dagre-d3&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
+import { dateToString } from &#x27;../globals&#x27;;
+import { User } from &#x27;../classes/user&#x27;;
+
+/**
+ * This is the key part of the app. This component is responsible for the 
+ * task management (dependency tree, etc.) in a project.
+ * 
+ * NOTE: This component is still being  implemented.
+ *
+ * @export
+ * @class ProjectTasksComponent
+ * @implements {OnInit}
+ */
+@Component({
+  selector: &#x27;app-project-tasks&#x27;,
+  templateUrl: &#x27;./project-tasks.component.html&#x27;,
+  styleUrls: [
+    &#x27;../common-styles.scss&#x27;,
+    &#x27;./project-tasks.component.scss&#x27;
+  ]
+})
+export class ProjectTasksComponent implements OnInit {
+
+  /**
+   * Reference to a global function.
+   *
+   * @public
+   * @memberof ProjectTasksComponent
+   */
+  public dateToString;
+
+  /**
+   * DagreD3 renderer.
+   *
+   * @private
+   * @memberof ProjectTasksComponent
+   */
+  private render;
+
+  /**
+   * Graph component.
+   *
+   * @private
+   * @memberof ProjectTasksComponent
+   */
+  private graph;
+
+  /**
+   * The SVG DOM element where DagreD3 can render.
+   *
+   * @private
+   * @memberof ProjectTasksComponent
+   */
+  private svg;
+
+  /**
+   * The project which is currently managed by its owner.
+   *
+   * @type {Project}
+   * @memberof ProjectTasksComponent
+   */
+  public project: Project;
+
+  /**
+   * List of all tasks that belong to this project.
+   *
+   * @type {Task[]}
+   * @memberof ProjectTasksComponent
+   */
+  public tasks: Task[];
+
+  /**
+   * This variable holds the selected task which is being edited.
+   *
+   * @type {Task}
+   * @memberof ProjectTasksComponent
+   */
+  public selectedTask: Task;
+
+  /**
+   * 
+   *
+   * @type {User[]}
+   * @memberof ProjectTasksComponent
+   */
+  public users: User[];
+
+  /**
+   * Creates an instance of ProjectTasksComponent.
+   * Sets the reference to a global helper function and initializes the
+   * &#x27;project&#x27; variable.
+   * 
+   * @param {ActivatedRoute} route
+   * @param {ProjectService} projectService
+   * @param {TaskService} taskService
+   * @param {UserService} userService
+   * @param {AuthenticationService} authService
+   * @param {MatDialog} dialog
+   * @memberof ProjectTasksComponent
+   */
+  constructor(
+    private route: ActivatedRoute,
+    private projectService: ProjectService,
+    private taskService: TaskService,
+    private userService: UserService,
+    private authService: AuthenticationService,
+    private dialog: MatDialog
+  ) {
+    this.dateToString &#x3D; dateToString;
+    this.project &#x3D; new Project(&#x27;&#x27;, 0);
+  }
+
+  async ngOnInit() {
+    this.svg &#x3D; d3.select(&#x27;svg&#x27;);
+    this.render &#x3D; new dagreD3.render();
+
+    this.initGraph();
+  }
+
+  /**
+   * Initializes the task dependency graph.
+   *
+   * @private
+   * @returns
+   * @memberof ProjectTasksComponent
+   */
+  private async initGraph() {
+
+    const projectID: number &#x3D; parseInt(this.route.snapshot.paramMap.get(&#x27;pid&#x27;), 10);
+    this.project &#x3D; await this.projectService.getProject(projectID);
+    if (this.project.tasks &#x3D;&#x3D;&#x3D; undefined) {
+      this.project.tasks &#x3D; [];
+    }
+
+    console.log(&#x27;PROJECT:&#x27;, this.project);
+
+    const allTasks: Task[] &#x3D; await this.taskService.getTasks();
+    this.tasks &#x3D; allTasks.filter(task &#x3D;&gt; task.project.id &#x3D;&#x3D;&#x3D; this.project.id);
+
+    console.log(&#x27;PROJECT TASKS:&#x27;, this.tasks);
+
+    this.graph &#x3D; new dagreD3.graphlib.Graph().setGraph({});
+
+    if (!this.tasks.length) {
+      return;
+    }
+
+    this.tasks.forEach(task &#x3D;&gt; {
+      let fillColor &#x3D; &#x27;#cd5555&#x27;;  // Not available (red)
+      let textColor &#x3D; &#x27;#ffffff&#x27;;
+
+      task.state &#x3D; 0;
+
+      if (task.complete) {  // Completed (green)
+        fillColor &#x3D; &#x27;#0b6623&#x27;;
+        task.state &#x3D; 3;
+      } else if (task.startTime !&#x3D; null  &amp;&amp; !task.complete) {  // In progress (yellow)
+        fillColor &#x3D; &#x27;#ffcc00&#x27;;
+        textColor &#x3D; &#x27;#000000&#x27;;
+        task.state &#x3D; 2;
+      } else if (this.checkAvailability(task)) {  // Available to work on (white)
+        fillColor &#x3D; &#x27;#ffffff&#x27;;
+        textColor &#x3D; &#x27;#000000&#x27;;
+        task.state &#x3D; 1;
+      }
+
+      this.graph.setNode(task.id, {
+        label: task.name,
+        labelStyle:
+          &#x27;font-weight: 300;&#x27;
+          + &#x27;font-size: 16px;&#x27;
+          + &#x27;font-family: &quot;Roboto Condensed&quot;;&#x27;
+          + &#x27;cursor: pointer;&#x27;
+          + &#x27;fill: &#x27; + textColor,
+        style:
+          &#x27;stroke: #000;&#x27;
+          + &#x27;stroke-width: 2px;&#x27;
+          + &#x27;cursor: pointer;&#x27;
+          + &#x27;fill: &#x27; + fillColor,
+        task: task
+      });
+    });
+
+    this.tasks.forEach(task &#x3D;&gt; {
+      task.prerequisites.forEach(pre &#x3D;&gt; {
+        this.graph.setEdge(pre.id, task.id, {
+          arrowhead: &#x27;vee&#x27;,
+          curve: d3.curveBasis
+        });
+      });
+    });
+
+    this.svg.selectAll(&#x27;*&#x27;).remove();
+    const inner &#x3D; this.svg.append(&#x27;g&#x27;);
+
+    this.render(inner, this.graph);
+
+    this.svg.selectAll(&#x27;g.node&#x27;).on(&#x27;click&#x27;, id &#x3D;&gt; this.nodeClicker(id));
+
+    const xCenterOffset &#x3D; (this.svg.attr(&#x27;width&#x27;) - this.graph.graph().width) / 2;
+    inner.attr(&#x27;transform&#x27;, &#x27;translate(&#x27; + xCenterOffset + &#x27;, 20)&#x27;);
+    this.svg.attr(&#x27;height&#x27;, this.graph.graph().height + 40);
+  }
+
+  /**
+   * Checks if a task is available for project member to work on.
+   *
+   * @private
+   * @param {Task} task The task which is being checked.
+   * @returns {boolean}
+   *  Returns TRUE if all prerequisites of the given task are completed.
+   *  Otherwise returns FALSE.
+   * @memberof ProjectTasksComponent
+   */
+  private checkAvailability(task: Task): boolean {
+    let available &#x3D; true;
+    task.prerequisites.forEach(pre &#x3D;&gt; {
+      if (!this.tasks.find(t &#x3D;&gt; t.id &#x3D;&#x3D;&#x3D; pre.id).complete) {
+        available &#x3D; false;
+      }
+    });
+    return available;
+  }
+
+  /**
+   * Adds a task to the project. It opens up a dialog ({DialogAddTaskComponent})
+   * where the project leader can provide the properties of the new task.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public addTask(): void {
+    const dialogRef &#x3D; this.dialog.open(DialogAddTaskComponent, {
+      width: &#x27;350px&#x27;,
+      data: {
+        project: this.project,
+        tasks: this.tasks
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(async newTask &#x3D;&gt; {
+      if (newTask !&#x3D;&#x3D; undefined) {
+        console.log(&#x27;NEW TASK:&#x27;, newTask);
+        console.log(typeof newTask.prerequisites);
+
+        await this.taskService.addTask(newTask);
+        this.initGraph();
+      }
+    });
+  }
+
+  /**
+   * Deletes the selected task from the project. A task can only be deleted,
+   * if it has not yet been started.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public async deleteTask() {
+    await this.taskService.deleteTask(this.selectedTask.id);
+    this.selectedTask &#x3D; null;
+    this.initGraph();
+  }
+
+  /**
+   * &#x27;onClick&#x27; event handler for the nodes of the task dependecy tree.
+   *
+   * @private
+   * @param {string} id Node ID.
+   * @memberof ProjectTasksComponent
+   */
+  private nodeClicker(id: string): void {
+    const node &#x3D; this.graph.node(id);
+    this.selectedTask &#x3D; node.task;
+  }
+
+  /**
+   * &quot;Begins&quot; the selected task. This is an event handler for the &quot;Begin task&quot; button.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public async beginTask() {
+    if (this.selectedTask.startTime &#x3D;&#x3D;&#x3D; null) {
+      await this.taskService.beginTask(this.selectedTask.id);
+    }
+
+    // await this.taskService.assignTaskToUser(this.selectedTask.id, this.authService.currentUser);
+    this.initGraph();
+    this.selectedTask &#x3D; null;
+  }
+
+  /**
+   * &quot;Ends&quot; the selected task. This is an event handler for the &quot;End task&quot; button.
+   *
+   * @memberof ProjectTasksComponent
+   */
+  public async endTask() {
+    await this.taskService.endTask(this.selectedTask.id, this.authService.currentUser);
+    this.initGraph();
+    this.selectedTask &#x3D; null;
+  }
+
+  /**
+   * Determines that the &quot;Delete task&quot; button is visible or not. (The task is deletable or not.)
+   *
+   * @returns {boolean}
+   * @memberof ProjectTasksComponent
+   */
+  public deleteBtnVisibility(): boolean {
+    if (this.selectedTask.assignees.length || this.project.leader.id !&#x3D;&#x3D; this.authService.currentUser.id || this.selectedTask.complete) {
+      return false;
+    }
+
+    return true;
+  }
+
+  /**
+   * Determines that the &quot;Begin task&quot; button is visible or not.
+   *
+   * @returns {boolean}
+   * @memberof ProjectTasksComponent
+   */
+  public startBtnVisibility(): boolean {
+    // tslint:disable-next-line:max-line-length
+    // if ([1, 2].includes(this.selectedTask.state) &amp;&amp; !(this.selectedTask.assignees.map(user &#x3D;&gt; user.id).includes(this.authService.currentUser.id))) {
+    if (this.selectedTask.state &#x3D;&#x3D;&#x3D; 1) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Being implemented.
+   *
+   * @ignore
+   * @private
+   * @memberof ProjectTasksComponent
+   */
+  private async joinTask() {
+
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;app-navbar&gt;&lt;/app-navbar&gt;
+
+&lt;div class&#x3D;&quot;ruler&quot;&gt;
+
+  &lt;h1&gt;Project: {{project.name}}&lt;/h1&gt;
+
+  &lt;mat-card id&#x3D;&quot;graph-wrapper&quot; class&#x3D;&quot;transparent-panel&quot;&gt;
+
+    &lt;mat-card-header id&#x3D;&quot;legend&quot;&gt;
+      &lt;mat-icon mat-button (click)&#x3D;&quot;addTask()&quot;&gt;add&lt;/mat-icon&gt;
+      &lt;label&gt;&lt;span&gt;(I am)&lt;/span&gt;&lt;br&gt;LEGEND&lt;/label&gt;
+      &lt;div class&#x3D;&quot;label lbl-done&quot;&gt;BEFEJEZETT&lt;/div&gt;
+      &lt;div class&#x3D;&quot;label lbl-in-progress&quot;&gt;FOLYAMATBAN&lt;/div&gt;
+      &lt;div class&#x3D;&quot;label lbl-ready&quot;&gt;MEGKEZDHETŐ&lt;/div&gt;
+      &lt;div class&#x3D;&quot;label lbl-blocked&quot;&gt;BLOKKOLT&lt;/div&gt;
+    &lt;/mat-card-header&gt;
+
+    &lt;svg id&#x3D;&quot;graph&quot; width&#x3D;&quot;520&quot;&gt;&lt;/svg&gt;
+
+  &lt;/mat-card&gt;
+
+  &lt;mat-card id&#x3D;&quot;task-form-wrapper&quot; class&#x3D;&quot;transparent-panel&quot; *ngIf&#x3D;&quot;selectedTask&quot;&gt;
+
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;&lt;span&gt;Feladat:&lt;/span&gt; {{selectedTask.name}}&lt;/mat-card-title&gt;
+      &lt;!-- &lt;mat-icon mat-button class&#x3D;&quot;btn-save&quot; (click)&#x3D;&quot;saveTask()&quot; &gt;save&lt;/mat-icon&gt; --&gt;
+      &lt;mat-icon mat-button class&#x3D;&quot;btn-delete&quot; (click)&#x3D;&quot;deleteTask()&quot; *ngIf&#x3D;&quot;deleteBtnVisibility()&quot; &gt;delete&lt;/mat-icon&gt;
+    &lt;/mat-card-header&gt;
+
+    &lt;mat-divider&gt;&lt;/mat-divider&gt;
+
+    &lt;mat-card-content&gt;
+&lt;!--
+      &lt;mat-form-field&gt;
+        &lt;input matInput type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Feladat neve&quot;
+               [(ngModel)]&#x3D;&quot;selectedTask.name&quot;
+               ngDisabled&#x3D;&quot;selectedTask.complete&quot;&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field&gt;
+        &lt;mat-select placeholder&#x3D;&quot;Előfeltételek&quot; [(ngModel)]&#x3D;&quot;selectedTask.prerequisites&quot; multiple&gt;
+          &lt;mat-option *ngFor&#x3D;&quot;let task of selectedTaskPrereqs&quot; [value]&#x3D;&quot;task.id&quot;&gt;{{task.name}}&lt;/mat-option&gt;
+        &lt;/mat-select&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;div class&#x3D;&quot;custom-form-field&quot;&gt;
+        Közreműködők: &lt;span *ngFor&#x3D;&quot;let user of selectedTask.assignees&quot;&gt;{{user.name}} &lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;mat-form-field&gt;
+        &lt;mat-select placeholder&#x3D;&quot;Közreműködők&quot; [(ngModel)]&#x3D;&quot;selectedTask.assignees&quot; multiple&gt;
+          &lt;mat-option *ngFor&#x3D;&quot;let user of users&quot; [value]&#x3D;&quot;user.id&quot;&gt;{{user.fullName}}&lt;/mat-option&gt;
+        &lt;/mat-select&gt;
+      &lt;/mat-form-field&gt;
+ --&gt;
+      &lt;!-- &lt;div class&#x3D;&quot;custom-form-field&quot; *ngIf&#x3D;&quot;selectedTask.isOpen &amp;&amp; authService.currentUser.id !&#x3D;&#x3D; project.leader.id&quot; &gt;
+        &lt;button (click)&#x3D;&quot;joinTask()&quot;&gt;Csatlakozás&lt;/button&gt;
+      &lt;/div&gt;
+ --&gt;
+      &lt;div id&#x3D;&quot;form-field-state&quot; class&#x3D;&quot;custom-form-field&quot;&gt;
+        Állapot:
+        &lt;span id&#x3D;&quot;tag-state&quot; class&#x3D;&quot;state-{{selectedTask.state}}&quot;&gt;
+          {{selectedTask.state &#x3D;&#x3D;&#x3D; 0 ? &quot;BLOKKOLT&quot; : (selectedTask.state &#x3D;&#x3D;&#x3D; 1 ? &quot;MEGKEZDHETŐ&quot; : (selectedTask.state &#x3D;&#x3D;&#x3D; 2 ? &quot;FOLYAMATBAN&quot; : &quot;BEFEJEZETT&quot;))}}
+        &lt;/span&gt;
+        &lt;button class&#x3D;&quot;task-btn&quot; mat-stroked-button *ngIf&#x3D;&quot;startBtnVisibility()&quot;  (click)&#x3D;&quot;beginTask()&quot;&gt;Megkezd / csatlakozik&lt;/button&gt;
+        &lt;button class&#x3D;&quot;task-btn&quot; mat-stroked-button *ngIf&#x3D;&quot;selectedTask.state &#x3D;&#x3D;&#x3D; 2&quot;  (click)&#x3D;&quot;endTask()&quot;&gt;Befejez&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div id&#x3D;&quot;form-field-dates&quot; class&#x3D;&quot;custom-form-field&quot; *ngIf&#x3D;&quot;selectedTask.startTime&quot; &gt;
+        &lt;span class&#x3D;&quot;date-field&quot;&gt;
+          Feladat kezdete:
+          &lt;span&gt;{{dateToString(selectedTask.startTime)}}&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class&#x3D;&quot;date-field&quot;&gt;
+          Feladat befejezése:
+          &lt;span&gt;{{dateToString(selectedTask.completionTime)}}&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div id&#x3D;&quot;form-field-done&quot; class&#x3D;&quot;custom-form-field&quot; *ngIf&#x3D;&quot;selectedTask.complete&quot; &gt;
+        Befejezte:
+        &lt;span class&#x3D;&quot;value-field&quot;&gt;{{selectedTask.completedBy}}&lt;/span&gt;
+      &lt;/div&gt;
+
+    &lt;/mat-card-content&gt;
+
+  &lt;/mat-card&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>../common-styles.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.transparent-panel {
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+  margin: 40px 0;
+  overflow: hidden;
+
+  &gt; mat-card-header {
+
+    mat-card-title {
+      font-family: &quot;Raleway&quot;;
+      font-weight: 300;
+      font-size: 26px;
+      text-shadow: 1px 1px 1px rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+      margin-left: -16px;
+
+      span {
+        font-size: 70%;
+        opacity: 0.6;
+        text-shadow: none;
+        color: #000;
+      }
+    }
+
+    mat-card-subtitle {
+      margin-left: -16px;
+      margin-top: -24px;
+      margin-bottom: 32px;
+    }
+
+    mat-icon {
+      position: absolute;
+      top: 30px;
+      right: 28px;
+      font-size: 32px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0px;
+      width: auto;
+      height: auto;
+      cursor: pointer;
+      box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+
+      &amp;:hover {
+        color: #cd5555;
+      }
+    }
+  }
+
+  &gt; mat-divider + mat-card-content,
+  &gt; mat-divider + mat-card-footer {
+    margin-top: 40px;
+  }
+}
+</code></pre>
+                <p class="comment">
+                    <code>./project-tasks.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+h1 {
+  padding-left: 30px;
+  font-size: 40px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 40px;
+}
+
+.placeholder {
+  text-align: center;
+  border: solid 1px rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  font-size: 30px;
+}
+
+.half-width {
+  width: 50%;
+}
+
+#graph-wrapper {
+  padding-right: 150px;
+  min-height: 230px;
+
+  #graph {
+    width: 100%;
+  }
+}
+
+#legend {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  background-color: #222;
+
+  mat-icon {
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    text-align: center;
+  }
+
+  label {
+    position: absolute;
+    bottom: 130px;
+    left: 10px;
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+
+    span {
+      font-size: 10px;
+      opacity: 0.4;
+    }
+  }
+
+  .label {
+    position: absolute;
+    width: 100px;
+    left: 10px;
+    padding: 5px;
+    font-size: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  .lbl-done {
+    background-color: green;
+    color: #fff;
+    bottom: 100px;
+  }
+
+  .lbl-in-progress {
+    background-color: orange;
+    color: #000;
+    bottom: 70px;
+  }
+
+  .lbl-ready {
+    background-color: white;
+    color: #000;
+    bottom: 40px;
+  }
+
+  .lbl-blocked {
+    background-color: #cd5555;
+    color: #fff;
+    bottom: 10px;
+  }
+}
+
+#task-form-wrapper {
+
+  mat-card-header {
+
+    .btn-save {
+      right: 80px;
+    }
+  }
+
+  mat-card-content {
+
+    .custom-form-field {
+      position: relative;
+      padding: 10px 0;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 0.712);
+      margin-bottom: 1.25em;
+
+      .value-field {
+        font-weight: bold;
+        color: #000;
+        padding-left: 6px;
+      }
+
+      &amp;#form-field-dates {
+
+        &gt; span {
+          display: inline-block;
+          width: 50%;
+
+          span {
+            font-weight: bold;
+            color: #000;
+            padding-left: 6px;
+          }
+        }
+      }
+
+      #tag-state {
+
+        font-weight: bold;
+        padding: 6px 10px;
+        margin-left: 20px;
+        border-radius: 3px;
+
+        &amp;.state-3 {
+          background-color: green;
+          color: white;
+        }
+
+        &amp;.state-2 {
+          background-color: orange;
+          color: black;
+        }
+
+        &amp;.state-1 {
+          background-color: white;
+          color: black;
+        }
+
+        &amp;.state-0 {
+          background-color: #cd5555;
+          color: white;
+          }
+      }
+
+      button {
+        float: right;
+        margin: -10px 0 0 10px;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="ruler">  <h1>Project: {{project.name}}</h1>  <mat-card id="graph-wrapper" class="transparent-panel">    <mat-card-header id="legend">      <mat-icon mat-button (click)="addTask()">add</mat-icon>      <label><span>(I am)</span><br>LEGEND</label>      <div class="label lbl-done">BEFEJEZETT</div>      <div class="label lbl-in-progress">FOLYAMATBAN</div>      <div class="label lbl-ready">MEGKEZDHETŐ</div>      <div class="label lbl-blocked">BLOKKOLT</div>    </mat-card-header>    <svg id="graph" width="520"></svg>  </mat-card>  <mat-card id="task-form-wrapper" class="transparent-panel" *ngIf="selectedTask">    <mat-card-header>      <mat-card-title><span>Feladat:</span> {{selectedTask.name}}</mat-card-title>      <!-- <mat-icon mat-button class="btn-save" (click)="saveTask()" >save</mat-icon> -->      <mat-icon mat-button class="btn-delete" (click)="deleteTask()" *ngIf="deleteBtnVisibility()" >delete</mat-icon>    </mat-card-header>    <mat-divider></mat-divider>    <mat-card-content><!--      <mat-form-field>        <input matInput type="text" placeholder="Feladat neve"               [(ngModel)]="selectedTask.name"               ngDisabled="selectedTask.complete">      </mat-form-field>      <mat-form-field>        <mat-select placeholder="Előfeltételek" [(ngModel)]="selectedTask.prerequisites" multiple>          <mat-option *ngFor="let task of selectedTaskPrereqs" [value]="task.id">{{task.name}}</mat-option>        </mat-select>      </mat-form-field>      <div class="custom-form-field">        Közreműködők: <span *ngFor="let user of selectedTask.assignees">{{user.name}} </span>      </div>      <mat-form-field>        <mat-select placeholder="Közreműködők" [(ngModel)]="selectedTask.assignees" multiple>          <mat-option *ngFor="let user of users" [value]="user.id">{{user.fullName}}</mat-option>        </mat-select>      </mat-form-field> -->      <!-- <div class="custom-form-field" *ngIf="selectedTask.isOpen && authService.currentUser.id !== project.leader.id" >        <button (click)="joinTask()">Csatlakozás</button>      </div> -->      <div id="form-field-state" class="custom-form-field">        Állapot:        <span id="tag-state" class="state-{{selectedTask.state}}">          {{selectedTask.state === 0 ? "BLOKKOLT" : (selectedTask.state === 1 ? "MEGKEZDHETŐ" : (selectedTask.state === 2 ? "FOLYAMATBAN" : "BEFEJEZETT"))}}        </span>        <button class="task-btn" mat-stroked-button *ngIf="startBtnVisibility()"  (click)="beginTask()">Megkezd / csatlakozik</button>        <button class="task-btn" mat-stroked-button *ngIf="selectedTask.state === 2"  (click)="endTask()">Befejez</button>      </div>      <div id="form-field-dates" class="custom-form-field" *ngIf="selectedTask.startTime" >        <span class="date-field">          Feladat kezdete:          <span>{{dateToString(selectedTask.startTime)}}</span>        </span>        <span class="date-field">          Feladat befejezése:          <span>{{dateToString(selectedTask.completionTime)}}</span>        </span>      </div>      <div id="form-field-done" class="custom-form-field" *ngIf="selectedTask.complete" >        Befejezte:        <span class="value-field">{{selectedTask.completedBy}}</span>      </div>    </mat-card-content>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DialogAddMemberComponent', 'selector': 'app-dialog-add-member'},{'name': 'DialogAddTaskComponent', 'selector': 'app-dialog-add-task'},{'name': 'DialogCreateProjectComponent', 'selector': 'app-dialog-create-project'},{'name': 'DialogRegistrationComponent', 'selector': 'app-dialog-registration'},{'name': 'LoginFormComponent', 'selector': 'app-login-form'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProjectMembersComponent', 'selector': 'app-project-members'},{'name': 'ProjectTasksComponent', 'selector': 'app-project-tasks'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserProjectsComponent', 'selector': 'app-user-projects'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProjectTasksComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProjectTasksComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
