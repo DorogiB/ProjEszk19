@@ -1,8 +1,36 @@
 
-
 jobs:
 
   include:
+
+    - stage: test
+      name: "Testing backend"
+      language: java
+      sudo: false
+      before_script:
+        - cd module-backend
+      script: 
+        - mvn test
+
+    - stage: generate_docs
+      name: "Generating documents with Compodoc"
+      language: node_js
+      node_js:
+        - '10.15.3'
+      install:
+        - cd module-frontend/src
+        - npm install
+      script:
+        - npm run compodoc
+        - bash ./deploy.sh
+       
+    - stage: sonarcloud
+      name: "Running SonarCloud"
+      language: java
+      sudo: false
+      script: 
+        - cd module-backend
+        - mvn package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
 
     - stage: deploy
       name: "Deploying application"
@@ -12,71 +40,6 @@ jobs:
         - mvn package
       script:
         - bash ./deploy.sh
-
-# jobs:
-
-#   include:
-
-#     - language: java
-#       sudo: false
-#       on:
-#         branch: master
-#         condition: -z $(git tag --points-at $TRAVIS_COMMIT)
-#       script: 
-#         - mvn package
-#         - bash ./deploy.sh
-
-    # - stage: test_backend
-    #   name: "Testing backend"
-    #   language: java
-    #   sudo: false
-    #   script: 
-    #     - cd module-backend
-    #     - mvn test
-      
-#     - stage: build_frontend
-#       name: "Building Angular"
-#       language: node_js
-#       node_js:
-#         - '10.15.3'
-#       install:
-#         - cd module-frontend
-#         - npm install
-# #        - npm audit fix --force
-#       script:
-#         - npm run build
-     
-    # - stage: generate_frontend_docs
-    #   name: "Generating documents with Compodoc"
-    #   language: node_js
-    #   node_js:
-    #     - '10.15.3'
-    #   install:
-    #     - cd module-frontend/src
-    #     - npm install
-    #   script:
-    #     - npm run compodoc
-    #     - bash ./deploy.sh
-       
-    # - stage: sonarcloud
-    #   name: "Running SonarCloud"
-    #   language: java
-    #   sudo: false
-    #   script: 
-    #     - cd module-backend
-    #     - mvn package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
-      
-    # - stage: deploy
-    #   name: "Build & deploy"
-    #   language: java
-    #   sudo: false
-    #   deploy:
-    #     - on:
-    #         branch: master
-    #         condition: -z $(git tag --points-at $TRAVIS_COMMIT)
-    #       script: 
-    #         - mvn package
-    #         - bash ./deploy.sh
    
 env:
   global:
