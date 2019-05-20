@@ -47,6 +47,7 @@ jobs:
         file: module-backend/target/module-backend*.war
         skip_cleanup: true
         name: TheProjectMapper-master-$(date +'%F-%T')
+        body: "A The Project Mapper egy webes alkalmazás, mely segít nyomon követni projektjeink, feladataink haladását. Kiváló alkalmazás munkacsoportok, céges csapatok, baráti társaságok számára, könnyen kézben tarthatjuk vele a részfeladatok haladását, átláthatóvá teszi a szervezési folyamatokat. Egy letisztult, egyszerű projekt menedzselő alkalmazás."
    
 env:
   global:
