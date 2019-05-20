@@ -21,18 +21,17 @@ jobs:
 #       script:
 #         - npm run build
      
-    - stage: generate_frontend_docs
-      name: "Generating documents with Compodoc"
-      language: node_js
-      node_js:
-        - '10.15.3'
-      install:
-        - cd module-frontend/src
-        - npm install
-#        - npm audit fix --force
-      script:
-        - npm run compodoc
-        - bash ./deploy.sh
+    # - stage: generate_frontend_docs
+    #   name: "Generating documents with Compodoc"
+    #   language: node_js
+    #   node_js:
+    #     - '10.15.3'
+    #   install:
+    #     - cd module-frontend/src
+    #     - npm install
+    #   script:
+    #     - npm run compodoc
+    #     - bash ./deploy.sh
        
     # - stage: sonarcloud
     #   name: "Running SonarCloud"
@@ -45,7 +44,10 @@ jobs:
     - stage: deploy
       name: "Build & deploy"
       language: java
-      sudo: true
+      sudo: false
+      - on:
+          branch: master
+          condition: -z $(git tag --points-at $TRAVIS_COMMIT)
       script: 
         - mvn package
         - bash ./deploy.sh
@@ -57,6 +59,6 @@ env:
 stages:
   # - test_backend
   # - build_frontend
-  - generate_frontend_docs
+  # - generate_frontend_docs
   # - sonarcloud
   - deploy
