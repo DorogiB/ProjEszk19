@@ -1,6 +1,16 @@
-jobs:
+matrix:
 
   include:
+
+    - language: java
+      sudo: false
+      on:
+        branch: master
+        condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+      script: 
+        - mvn package
+        - bash ./deploy.sh
+
     # - stage: test_backend
     #   name: "Testing backend"
     #   language: java
@@ -41,25 +51,25 @@ jobs:
     #     - cd module-backend
     #     - mvn package sonar:sonar -Dsonar.projectKey=DorogiB_ProjEszk19 -Dsonar.organization=dorogib-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=9df464cadf54111d1831bb94fe45d6dcc0744418
       
-    - stage: deploy
-      name: "Build & deploy"
-      language: java
-      sudo: false
-      deploy:
-        - on:
-            branch: master
-            condition: -z $(git tag --points-at $TRAVIS_COMMIT)
-          script: 
-            - mvn package
-            - bash ./deploy.sh
+    # - stage: deploy
+    #   name: "Build & deploy"
+    #   language: java
+    #   sudo: false
+    #   deploy:
+    #     - on:
+    #         branch: master
+    #         condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+    #       script: 
+    #         - mvn package
+    #         - bash ./deploy.sh
    
 env:
   global:
     - GITHUB_REF: github.com/DorogiB/ProjEszk19.git
 
-stages:
+# stages:
   # - test_backend
   # - build_frontend
   # - generate_frontend_docs
   # - sonarcloud
-  - deploy
+  # - deploy
