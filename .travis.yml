@@ -1,15 +1,30 @@
-matrix:
+language: java
+sudo: false
 
-  include:
+before_deploy:
+  - mvn package
 
-    - language: java
-      sudo: false
-      on:
-        branch: master
-        condition: -z $(git tag --points-at $TRAVIS_COMMIT)
-      script: 
-        - mvn package
-        - bash ./deploy.sh
+deploy:
+  - on:
+      branch: master
+      condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+    provider: script
+    script:
+      - bash ./deploy.sh
+
+
+# matrix:
+
+#   include:
+
+#     - language: java
+#       sudo: false
+#       on:
+#         branch: master
+#         condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+#       script: 
+#         - mvn package
+#         - bash ./deploy.sh
 
     # - stage: test_backend
     #   name: "Testing backend"
