@@ -97,9 +97,9 @@ env:
   global:
     - GITHUB_REF: github.com/DorogiB/ProjEszk19.git
 
-# stages:
+stages:
   # - test_backend
   # - build_frontend
   # - generate_frontend_docs
   # - sonarcloud
-  # - deploy
+  - deploy
