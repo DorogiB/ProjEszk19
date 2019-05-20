@@ -1,6 +1,10 @@
 ![Logo](images/theProjectMapperLogo.png)
 
-A "The Project Mapper" egy webes alkalmazás, mely segít nyomon követni projektjeink, feladataink haladását. Kiváló alkalmazás munkacsoportok, céges csapatok, baráti társaságok számára, könnyen kézben tarthatjuk vele a részfeladatok haladását, átláthatóvá teszi a szervezési folyamatokat. Egy letisztult, egyszerű projekt menedzselő alkalmazás. 
+A "The Project Mapper" egy webes alkalmazás, mely segít nyomon követni projektjeink, feladataink haladását. Kiváló alkalmazás munkacsoportok, céges csapatok, baráti társaságok számára, könnyen kézben tarthatjuk vele a részfeladatok haladását, átláthatóvá teszi a szervezési folyamatokat. Egy letisztult, egyszerű projekt menedzselő alkalmazás.
+
+### Fejlesztői megjegyzés
+
+Habár a megoldás már a feladat beadása után született, de az alkalmazást már le lehet tölteni a GitHub Releases fül alatt is. A Travis CI automatikusan feltölti oda a lebuildelt applikációt.
 
 ## FELHASZNÁLÓI DOKUMENTÁCIÓ
 
@@ -13,6 +17,8 @@ __Regisztrálni__ a főoldalon található "Regisztráció" gomb segítségével
 ![Registration](images/registr.png)
 
 __Bejelentkezni__ szintén a főoldalon lehetséges, felhasználónév (username) és jelszó (password) megadásával. Ekkor a felhasználót autentikálja az applikáció, majd megjeleníti a "Projektek" oldalt.
+
+__MEGJEGYZÉS:__ Regisztráció nélkül is be lehet lépni az __admin/admin__ felhasználónév és jelszó párossal.
 
 ![Login](images/index.png)
 
