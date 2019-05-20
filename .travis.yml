@@ -45,12 +45,14 @@ jobs:
       name: "Build & deploy"
       language: java
       sudo: false
-      on:
-        branch: master
-        condition: -z $(git tag --points-at $TRAVIS_COMMIT)
-      script: 
+      before_deploy:
         - mvn package
-        - bash ./deploy.sh
+      deploy:
+        - on:
+            branch: master
+            condition: -z $(git tag --points-at $TRAVIS_COMMIT)
+          script: 
+            - bash ./deploy.sh
    
 env:
   global:
