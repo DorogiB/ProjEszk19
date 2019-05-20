@@ -46,8 +46,7 @@ env:
     - GITHUB_REF: github.com/DorogiB/ProjEszk19.git
 
 stages:
-  # - test_backend
-  # - build_frontend
-  # - generate_frontend_docs
-  # - sonarcloud
+  - test
+  - generate_docs
+  - sonarcloud
   - deploy
