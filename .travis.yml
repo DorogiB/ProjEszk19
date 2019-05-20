@@ -11,8 +11,6 @@ jobs:
       before_script:
         - mvn package
       script:
-        # provider: script
-        # script:
         - bash ./deploy.sh
 
 # jobs:
