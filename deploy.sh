@@ -7,8 +7,12 @@ cp module-backend/target/module-backend*.war deployment && \
 git config --global user.name "DorogiB" && \
 git config --global user.email "dbenjamin@inf.elte.hu" && \
 
+git status && \
+
 git checkout master && \
-git add deployment/* && \
+git add . && \
 git commit --message "Deploying application" && \
 
-git push --quiet --set-upstream "https://${GITHUB_TOKEN}@${GITHUB_REF}" master
+git status && \
+
+git push --force --set-upstream "https://${GITHUB_TOKEN}@${GITHUB_REF}" master:master
